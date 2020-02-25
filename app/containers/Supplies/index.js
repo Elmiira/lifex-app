@@ -59,7 +59,7 @@ export default function Supplies() {
     if (inUse < 0 || std < 0 || stock < 0) {
       return false;
     }
-    return true; 
+    return true;
   };
 
   return (
@@ -78,10 +78,8 @@ export default function Supplies() {
       onSearchChange={searchChange}
       editable={{
         onRowAdd: async newSupplies => {
-          console.log('adding');
           const isSuppliesValid = validateSupplies(newSupplies);
-          console.log(isSuppliesValid)
-          if (isSuppliesValid){
+          if (isSuppliesValid) {
             // mack to support db operations
             const id = state.totalSupplies + 1;
             const isActive = true;

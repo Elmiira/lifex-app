@@ -1,15 +1,13 @@
 import request from 'utils/request';
 import {
-  FETCH_Supplies_API,
-  UPDATE_Supplies_API,
-  ADD_Supplies_API,
-  DELETE_Supplies_API,
-  DAWA_API,
-  DAWA_ADDRESS_API,
+  FETCH_SUPPLIERS_API,
+  UPDATE_SUPPLIERS_API,
+  ADD_SUPPLIERS_API,
+  DELETE_SUPPLIERS_API,
 } from './apiAddresses';
 
 export function fetchSupplies({ page, pageSize, query }) {
-  const url = FETCH_Supplies_API(page, pageSize);
+  const url = FETCH_SUPPLIERS_API(page, pageSize);
   return request({
     method: 'POST',
     url: url,
@@ -22,7 +20,7 @@ export function fetchSupplies({ page, pageSize, query }) {
 export function addSupplies(newSupplies) {
   return request({
     method: 'POST',
-    url: ADD_Supplies_API,
+    url: ADD_SUPPLIERS_API,
     data: {
       ...newSupplies,
     },
@@ -30,7 +28,7 @@ export function addSupplies(newSupplies) {
 }
 
 export function updateSupplies(supplyId, newSupplies) {
-  const url = UPDATE_Supplies_API(supplyId);
+  const url = UPDATE_SUPPLIERS_API(supplyId);
   return request({
     method: 'PUT',
     url: url,
@@ -41,7 +39,7 @@ export function updateSupplies(supplyId, newSupplies) {
 }
 
 export function deleteSupplies(supplyId) {
-  const url = DELETE_Supplies_API(supplyId);
+  const url = DELETE_SUPPLIERS_API(supplyId);
   return request({
     method: 'DELETE',
     url: url,
